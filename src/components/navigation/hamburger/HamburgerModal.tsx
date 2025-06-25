@@ -2,11 +2,12 @@
 
 import { JSX } from "react";
 import { hamburgerActionAtom } from "@/store/hamburger/hamburgerActionAtom";
-import { useAtom } from "jotai";
+import { useAtomValue } from "jotai";
 import { navLinks } from "@/config/link/navLinks";
 import { NavLinkType } from "@/types/link";
 import { cn } from "@/utils/tailwind";
 import { NavLink } from "@/components/navigation/link";
+import { useHamburger } from "@/hooks/navigation";
 
 /**
  * @description ハンバーガーモーダルコンポーネント
@@ -14,11 +15,8 @@ import { NavLink } from "@/components/navigation/link";
  * @returns JSX.Element
  */
 export default function HamburgerModal(): JSX.Element {
-  const [isOpen, setIsOpen] = useAtom(hamburgerActionAtom);
-
-  const handleCloseHamburger = () => {
-    setIsOpen(false);
-  };
+  const isOpen = useAtomValue(hamburgerActionAtom);
+  const { handleCloseHamburger } = useHamburger();
 
   return (
     <>

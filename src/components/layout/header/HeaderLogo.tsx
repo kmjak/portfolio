@@ -1,10 +1,9 @@
 "use client";
 
 import { JSX } from "react";
-import { useSetAtom } from "jotai";
 import Link from "next/link";
 import { Text } from "@/components/ui";
-import { hamburgerActionAtom } from "@/store/hamburger/hamburgerActionAtom";
+import { useHamburger } from "@/hooks/navigation";
 
 /**
  * @description ヘッダーのロゴコンポーネント
@@ -12,14 +11,10 @@ import { hamburgerActionAtom } from "@/store/hamburger/hamburgerActionAtom";
  * @returns JSX.Element
  */
 export default function HeaderLogo(): JSX.Element {
-  const setModal = useSetAtom(hamburgerActionAtom);
-
-  const handleLogoClick = () => {
-    setModal(false);
-  };
+  const { handleCloseHamburger } = useHamburger();
 
   return (
-    <div className="" onClick={handleLogoClick}>
+    <div onClick={handleCloseHamburger}>
       <Link href="/">
         <Text className="font-bold text-base md:text-lg lg:text-xl">My Portfolio</Text>
       </Link>

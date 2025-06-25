@@ -7,6 +7,12 @@ interface NavLinkProps {
   children: React.ReactNode;
 }
 
+/**
+ * @description ナビゲーションリンクコンポーネント
+ *
+ * @param {NavLinkProps} props - リンクのプロパティ
+ * @returns {JSX.Element} - ナビゲーションリンクの要素
+ */
 export default function NavLink({ href, children }: Readonly<NavLinkProps>): JSX.Element {
   return (
     <Link href={href}>

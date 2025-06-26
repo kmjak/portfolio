@@ -5,6 +5,7 @@ import { JSX } from "react";
 interface NavLinkProps {
   href: string;
   children: React.ReactNode;
+  textClassName?: string;
 }
 
 /**
@@ -13,10 +14,14 @@ interface NavLinkProps {
  * @param {NavLinkProps} props - リンクのプロパティ
  * @returns {JSX.Element} - ナビゲーションリンクの要素
  */
-export default function NavLink({ href, children }: Readonly<NavLinkProps>): JSX.Element {
+export default function NavLink({
+  href,
+  children,
+  textClassName,
+}: Readonly<NavLinkProps>): JSX.Element {
   return (
     <Link href={href} className="hover:opacity-60 transition-opacity duration-200">
-      <Text>{children}</Text>
+      <Text className={textClassName}>{children}</Text>
     </Link>
   );
 }

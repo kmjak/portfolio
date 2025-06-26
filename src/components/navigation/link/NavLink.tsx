@@ -20,7 +20,7 @@ export default function NavLink({
   textClassName,
 }: Readonly<NavLinkProps>): JSX.Element {
   return (
-    <Link href={href}>
+    <Link href={href} className="hover:opacity-60 transition-opacity duration-200">
       <Text className={textClassName}>{children}</Text>
     </Link>
   );

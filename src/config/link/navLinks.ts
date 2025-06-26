@@ -16,11 +16,15 @@ export const navLinks: NavLinkType[] = [
     label: "About",
   },
   {
-    href: "/contact",
-    label: "Contact",
-  },
-  {
     href: "/projects",
     label: "Projects",
+  },
+  {
+    href: "/skills",
+    label: "skills",
+  },
+  {
+    href: "/contact",
+    label: "Contact",
   },
 ];

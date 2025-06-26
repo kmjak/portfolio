@@ -15,7 +15,7 @@ interface NavLinkProps {
  */
 export default function NavLink({ href, children }: Readonly<NavLinkProps>): JSX.Element {
   return (
-    <Link href={href}>
+    <Link href={href} className="hover:opacity-60 transition-opacity duration-200">
       <Text>{children}</Text>
     </Link>
   );

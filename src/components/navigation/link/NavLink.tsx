@@ -29,7 +29,7 @@ export default function NavLink({
       href={href}
       className={cn(
         "hover:opacity-60 transition-opacity duration-200",
-        pathname === href ? "text-blue-400" : "text-white"
+        pathname === href && "text-blue-400"
       )}
     >
       <Text className={textClassName}>{children}</Text>

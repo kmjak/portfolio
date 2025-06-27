@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Portfolio",
     default: "Portfolio",
   },
-  description: "XXXXXのポートフォリオサイトです。",
+  description: "奥村真翔のポートフォリオサイトです。",
   icons: {
     icon: "/favicon.ico",
   },

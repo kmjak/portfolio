@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Portfolio",
     default: "Portfolio",
   },
-  description: "奥村真翔のポートフォリオサイトです。",
+  description: "XXXXXのポートフォリオサイトです。",
   icons: {
     icon: "/favicon.ico",
   },
@@ -33,10 +33,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gray-900 text-white w-full`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-white w-full`}
       >
         <Header />
-        <main className="relative w-full h-[calc(100vh-40px)] md:h-[calc(100vh-48px)] lg:h-[calc(100vh-56px)] overflow-x-hidden">
+        <main className="relative w-full overflow-x-hidden">
           {children}
           <HamburgerModal />
         </main>

@@ -16,7 +16,7 @@ export default function HeaderLogo(): JSX.Element {
   return (
     <div onClick={handleCloseHamburger}>
       <Link href="/" className="hover:opacity-60 transition-opacity duration-200">
-        <Text className="font-bold text-base md:text-lg lg:text-xl">My Portfolio</Text>
+        <Text className="font-bold text-xl md:text-2xl lg:text-3xl">My Portfolio</Text>
       </Link>
     </div>
   );

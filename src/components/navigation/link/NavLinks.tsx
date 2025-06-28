@@ -13,7 +13,9 @@ export default function NavLinks() {
       <ul className="flex space-x-4">
         {navLinks.map((link: NavLinkType) => (
           <li key={link.href}>
-            <NavLink href={link.href}>{link.label}</NavLink>
+            <NavLink href={link.href} className="md:text-xl lg:text-2xl">
+              {link.label}
+            </NavLink>
           </li>
         ))}
       </ul>

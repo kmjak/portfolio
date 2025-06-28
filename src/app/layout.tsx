@@ -36,7 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gray-900 text-white w-full`}
       >
         <Header />
-        <main className="relative w-full h-[calc(100vh-40px)] md:h-[calc(100vh-48px)] lg:h-[calc(100vh-56px)] overflow-x-hidden">
+        <main className="w-full h-[calc(100vh-40px)] md:h-[calc(100vh-48px)] lg:h-[calc(100vh-56px)] overflow-x-hidden">
           {children}
           <HamburgerModal />
         </main>

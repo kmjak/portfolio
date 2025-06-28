@@ -21,7 +21,7 @@ export const navLinks: NavLinkType[] = [
   },
   {
     href: "/skills",
-    label: "skills",
+    label: "Skills",
   },
   {
     href: "/contact",

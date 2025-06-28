@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { PageTitle, Text } from "@/components/ui";
 import { useRouter } from "next/navigation";
+import { JSX } from "react";
 
 /**
  * @description 404 Not Found ページのコンポーネント
  *
  * @returns JSX.Element
  */
-export default function NotFound() {
+export default function NotFound(): JSX.Element {
   const router = useRouter();
 
   const handleGoBack = () => {

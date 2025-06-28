@@ -3,6 +3,7 @@
 import { PageTitle, Text } from "@/components/ui";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { JSX } from "react";
 import { BiError } from "react-icons/bi";
 
 interface ErrorProps {
@@ -15,7 +16,7 @@ interface ErrorProps {
  * @param {ErrorProps} props - エラー情報を含むプロパティ
  * @returns JSX.Element
  */
-export default function Error({ error }: ErrorProps) {
+export default function Error({ error }: ErrorProps): JSX.Element {
   const router = useRouter();
 
   const handleGoBack = () => {

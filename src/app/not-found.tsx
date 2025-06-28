@@ -4,6 +4,11 @@ import Link from "next/link";
 import { PageTitle, Text } from "@/components/ui";
 import { useRouter } from "next/navigation";
 
+/**
+ * @description 404 Not Found ページのコンポーネント
+ *
+ * @returns JSX.Element
+ */
 export default function NotFound() {
   const router = useRouter();
 

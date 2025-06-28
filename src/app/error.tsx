@@ -9,6 +9,12 @@ interface ErrorProps {
   error: Error & { digest?: string };
 }
 
+/**
+ * @description エラー発生時のコンポーネント
+ *
+ * @param {ErrorProps} props - エラー情報を含むプロパティ
+ * @returns JSX.Element
+ */
 export default function Error({ error }: ErrorProps) {
   const router = useRouter();
 

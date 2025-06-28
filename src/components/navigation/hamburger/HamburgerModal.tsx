@@ -22,21 +22,21 @@ export default function HamburgerModal(): JSX.Element {
     <>
       <nav
         className={cn(
-          "md:hidden bg-slate-800 absolute top-0 bottom-0 w-48 sm:w-64 h-full right-0 transition-all ease-in-out",
+          "md:hidden bg-slate-800 fixed top-16 bottom-0 w-48 sm:w-64 h-full right-0 transition-all ease-in-out",
           {
             "right-0": isOpen,
             "-right-48 sm:-right-64": !isOpen,
           }
         )}
       >
-        <ul className="flex flex-col space-y-1 sm:space-y-2">
+        <ul>
           {navLinks.map((link: NavLinkType) => (
-            <li
-              key={link.href}
-              onClick={handleCloseHamburger}
-              className="hover:bg-slate-700 px-3 sm:px-5 transition-colors duration-200"
-            >
-              <NavLink href={link.href} textClassName="text-lg sm:text-xl">
+            <li key={link.href} className="hover:bg-slate-700 transition-colors duration-200">
+              <NavLink
+                href={link.href}
+                className="text-lg sm:text-xl px-3 py-1 sm:px-5 sm:py-2 w-full block"
+                onClick={handleCloseHamburger}
+              >
                 {link.label}
               </NavLink>
             </li>

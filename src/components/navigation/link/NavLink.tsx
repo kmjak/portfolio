@@ -1,15 +1,14 @@
 "use client";
 
-import { Text } from "@/components/ui";
 import { cn } from "@/utils/tailwind";
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { JSX } from "react";
 
-interface NavLinkProps {
+interface NavLinkProps extends Omit<LinkProps, 'href'> {
   href: string;
   children: React.ReactNode;
-  textClassName?: string;
+  className?: string;
 }
 
 /**
@@ -21,18 +20,21 @@ interface NavLinkProps {
 export default function NavLink({
   href,
   children,
-  textClassName,
+  className,
+  ...props
 }: Readonly<NavLinkProps>): JSX.Element {
   const pathname = usePathname();
   return (
     <Link
       href={href}
       className={cn(
-        "hover:opacity-60 transition-opacity duration-200",
+        "hover:opacity-70 transition-opacity duration-200",
+        className,
         pathname === href && "text-blue-400"
       )}
+      {...props}
     >
-      <Text className={textClassName}>{children}</Text>
+      {children}
     </Link>
   );
 }

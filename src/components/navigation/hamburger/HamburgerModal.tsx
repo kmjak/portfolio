@@ -29,14 +29,14 @@ export default function HamburgerModal(): JSX.Element {
           }
         )}
       >
-        <ul className="flex flex-col space-y-1 sm:space-y-2">
+        <ul>
           {navLinks.map((link: NavLinkType) => (
-            <li
-              key={link.href}
-              onClick={handleCloseHamburger}
-              className="hover:bg-slate-700 px-3 sm:px-5 transition-colors duration-200"
-            >
-              <NavLink href={link.href} textClassName="text-lg sm:text-xl">
+            <li key={link.href} className="hover:bg-slate-700 transition-colors duration-200">
+              <NavLink
+                href={link.href}
+                className="text-lg sm:text-xl px-3 py-1 sm:px-5 sm:py-2 w-full block"
+                onClick={handleCloseHamburger}
+              >
                 {link.label}
               </NavLink>
             </li>

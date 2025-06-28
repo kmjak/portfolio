@@ -5,7 +5,7 @@ import Link, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { JSX } from "react";
 
-interface NavLinkProps extends LinkProps {
+interface NavLinkProps extends Omit<LinkProps, 'href'> {
   href: string;
   children: React.ReactNode;
   className?: string;

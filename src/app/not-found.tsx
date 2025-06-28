@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PageTitle, Text } from "@/components/ui";
 import { useRouter } from "next/navigation";
 import { JSX } from "react";
+import ErrorLayout from "@/components/error/ErrorLayout";
 
 /**
  * @description 404 Not Found ページのコンポーネント
@@ -18,8 +19,8 @@ export default function NotFound(): JSX.Element {
   };
 
   return (
-    <div className="mt-12 md:mt-32 h-full mx-auto px-4">
-      <div className="text-center">
+    <ErrorLayout>
+      <>
         <div className="mb-8">
           <div className="text-8xl md:text-9xl font-bold mb-4 select-none">404</div>
         </div>
@@ -48,7 +49,7 @@ export default function NotFound(): JSX.Element {
             前のページに戻る
           </button>
         </div>
-      </div>
-    </div>
+      </>
+    </ErrorLayout>
   );
 }

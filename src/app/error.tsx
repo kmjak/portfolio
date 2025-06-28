@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorLayout from "@/components/error/ErrorLayout";
 import { PageTitle, Text } from "@/components/ui";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -24,8 +25,8 @@ export default function Error({ error }: ErrorProps): JSX.Element {
   };
 
   return (
-    <div className="mt-12 md:mt-32 h-full mx-auto px-4">
-      <div className="text-center">
+    <ErrorLayout>
+      <>
         <div className="mb-8 flex justify-center">
           <BiError className="text-8xl text-red-500" />
         </div>
@@ -61,7 +62,7 @@ export default function Error({ error }: ErrorProps): JSX.Element {
             前のページに戻る
           </button>
         </div>
-      </div>
-    </div>
+      </>
+    </ErrorLayout>
   );
 }

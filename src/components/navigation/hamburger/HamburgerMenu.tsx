@@ -5,6 +5,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { useAtomValue } from "jotai";
 import { hamburgerActionAtom } from "@/store/hamburger/hamburgerActionAtom";
 import { useHamburger } from "@/hooks/navigation";
+import { Button } from "@/components/ui";
 
 /**
  * @description ハンバーガーメニューコンポーネント
@@ -17,13 +18,9 @@ export default function HamburgerMenu(): JSX.Element {
 
   return (
     <>
-      <button
-        className="md:hidden text-2xl focus:outline-none"
-        onClick={handleToggleHamburger}
-        aria-label="Toggle menu"
-      >
-        {isOpen ? <HiX /> : <HiMenu />}
-      </button>
+      <Button className="md:hidden py-3 md:py-5 lg:py-6" onClick={handleToggleHamburger}>
+        {isOpen ? <HiX className="text-xl" /> : <HiMenu className="text-xl" />}
+      </Button>
     </>
   );
 }

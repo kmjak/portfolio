@@ -1,5 +1,9 @@
 import { Contact } from "@/types/contact";
 
+/**
+ * @description
+ * 連絡先情報を定義する配列です。
+ */
 export const contacts: Contact[] = [
   {
     name: "GitHub",

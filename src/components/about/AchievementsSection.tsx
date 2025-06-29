@@ -2,6 +2,11 @@ import { JSX } from "react";
 import { Text } from "@/components/ui";
 import AboutSection from "./AboutSection";
 
+/**
+ * @description 実績セクションを表示するコンポーネント
+ *
+ * @returns {JSX.Element} - 実績セクション
+ */
 export default function AchievementsSection(): JSX.Element {
   return (
     <AboutSection title="実績">

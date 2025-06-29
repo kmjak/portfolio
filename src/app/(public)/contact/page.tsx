@@ -16,7 +16,7 @@ export default function ContactPage(): JSX.Element {
         <div className="text-center mb-12">
           <PageTitle>Contact</PageTitle>
           <Text className="text-gray-400 text-lg mt-4 max-w-2xl mx-auto">
-            GithubやAtCoderなどの情報です。
+            GitHubやAtCoderなどの情報です。
           </Text>
         </div>
 

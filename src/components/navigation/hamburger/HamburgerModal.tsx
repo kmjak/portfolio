@@ -3,7 +3,7 @@
 import { JSX } from "react";
 import { hamburgerActionAtom } from "@/store/hamburger/hamburgerActionAtom";
 import { useAtomValue } from "jotai";
-import { navLinks } from "@/config/link/navLinks";
+import { navLinks } from "@/config/link";
 import { NavLinkType } from "@/types/link";
 import { cn } from "@/utils/tailwind";
 import { NavLink } from "@/components/navigation/link";

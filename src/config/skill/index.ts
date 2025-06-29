@@ -1,0 +1,1 @@
+export { skillCategories } from "./skillCategories";

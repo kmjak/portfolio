@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import { Text } from "../ui";
+import { Text } from "@/components/ui";
 import AboutSection from "./AboutSection";
 
 export default function AchievementsSection(): JSX.Element {

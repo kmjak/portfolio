@@ -14,7 +14,7 @@ interface PageSubTitleProps extends HTMLProps<HTMLHeadingElement> {
  * @param {string} [className] - 追加のCSSクラス
  * @param {ReactNode} children - タイトルの内容
  * @param {HTMLProps<HTMLHeadingElement>} props - HTMLの標準的なh3の属性
- * @returns {JSX.Element} - PageTitleコンポーネント
+ * @returns {JSX.Element} - PageSubTitleコンポーネント
  */
 export default function PageSubTitle({
   children,

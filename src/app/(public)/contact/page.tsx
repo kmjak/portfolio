@@ -3,6 +3,11 @@ import { PageTitle, Text } from "@/components/ui";
 import { contacts } from "@/config/contact";
 import { Contact } from "@/types/contact";
 
+/**
+ * @description 連絡先情報を一覧で表示するページです。
+ *
+ * @returns {JSX.Element} - ContactPageコンポーネント
+ */
 export default function ContactPage() {
   return (
     <div className="min-h-screen w-full mx-auto px-4 py-8 md:py-12">

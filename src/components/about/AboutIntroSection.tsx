@@ -1,7 +1,12 @@
 import { JSX } from "react";
-import AboutSection from "./AboutSection";
 import { Text } from "@/components/ui";
+import AboutSection from "./AboutSection";
 
+/**
+ * @description 自己紹介セクションを表示するコンポーネント
+ *
+ * @returns {JSX.Element} - 自己紹介セクション
+ */
 export default function AboutIntroSection(): JSX.Element {
   return (
     <AboutSection title="自己紹介">

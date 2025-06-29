@@ -1,7 +1,12 @@
 import { JSX } from "react";
-import AboutSection from "./AboutSection";
 import { Text } from "@/components/ui";
+import AboutSection from "./AboutSection";
 
+/**
+ * @description 趣味セクションを表示するコンポーネント
+ *
+ * @returns {JSX.Element} - 趣味セクション
+ */
 export default function AboutHobbySection(): JSX.Element {
   return (
     <AboutSection title="趣味">

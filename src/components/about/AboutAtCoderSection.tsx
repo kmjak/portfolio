@@ -1,7 +1,12 @@
 import { Text } from "@/components/ui";
-import AboutSection from "./AboutSection";
 import { JSX } from "react";
+import AboutSection from "./AboutSection";
 
+/**
+ * @description AtCoderの実績を表示するセクションコンポーネント
+ *
+ * @returns {JSX.Element} - AtCoder実績セクション
+ */
 export default function AboutAtCoderSection(): JSX.Element {
   return (
     <AboutSection title="AtCoder実績">

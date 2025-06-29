@@ -6,6 +6,11 @@ import {
 } from "@/components/about";
 import { PageTitle, Text } from "@/components/ui";
 
+/**
+ * @description Aboutページのコンポーネント
+ *
+ * @returns {JSX.Element} - Aboutページのコンポーネント
+ */
 export default function AboutPage() {
   return (
     <div className="min-h-screen w-full mx-auto px-4 py-8 md:py-12">

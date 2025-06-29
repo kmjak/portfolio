@@ -3,6 +3,7 @@ import {
   AboutHobbySection,
   AboutIntroSection,
   AchievementsSection,
+  CertificationSection,
 } from "@/components/about";
 import { PageTitle, Text } from "@/components/ui";
 
@@ -27,6 +28,7 @@ export default function AboutPage() {
         </div>
         <AboutAtCoderSection />
         <AchievementsSection />
+        <CertificationSection />
       </div>
     </div>
   );

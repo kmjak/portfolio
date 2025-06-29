@@ -16,12 +16,12 @@ export default function ContactPage(): JSX.Element {
         <div className="text-center mb-12">
           <PageTitle>Contact</PageTitle>
           <Text className="text-gray-400 text-lg mt-4 max-w-2xl mx-auto">
-            GitHubやAtCoderなどの情報です。
+            GithubやAtCoderなどの情報です。
           </Text>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {contacts.map((contact) => (
+          {contacts.map((contact: Contact) => (
             <ContactCard key={contact.name} contact={contact} />
           ))}
         </div>

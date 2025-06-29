@@ -12,15 +12,15 @@ import { Certification } from "@/types/about";
 export default function CertificationSection(): JSX.Element {
   return (
     <AboutSection title="資格">
-      <div className="grid grid-cols-1 gap-3">
+      <ul className="grid grid-cols-1 gap-3">
         {certifications.map((certification: Certification) => (
-          <div key={`${certification.date}-${certification.name}`}>
+          <li key={`${certification.date}-${certification.name}`}>
             <Text className="font-semibold">
               {certification.date}: {certification.name}
             </Text>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </AboutSection>
   );
 }

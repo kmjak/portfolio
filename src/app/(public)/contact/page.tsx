@@ -21,7 +21,7 @@ export default function ContactPage(): JSX.Element {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {contacts.map((contact: Contact) => (
+          {contacts.map((contact) => (
             <ContactCard key={contact.name} contact={contact} />
           ))}
         </div>

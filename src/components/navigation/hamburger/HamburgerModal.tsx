@@ -22,7 +22,7 @@ export default function HamburgerModal(): JSX.Element {
     <>
       <nav
         className={cn(
-          "md:hidden bg-slate-800 fixed top-16 bottom-0 w-48 sm:w-64 h-full right-0 transition-all ease-in-out",
+          "md:hidden bg-slate-800 fixed top-16 bottom-0 w-48 sm:w-64 h-full right-0 transition-all ease-in-out z-10",
           {
             "right-0": isOpen,
             "-right-48 sm:-right-64": !isOpen,

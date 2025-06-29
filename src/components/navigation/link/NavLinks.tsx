@@ -1,5 +1,5 @@
 import { NavLinkType } from "@/types/link";
-import { navLinks } from "@/config/link/navLinks";
+import { navLinks } from "@/config/link";
 import NavLink from "./NavLink";
 
 /**

@@ -4,7 +4,6 @@ import {
   FaJava,
   FaPhp,
   FaSwift,
-  FaDatabase,
   FaLinux,
   FaWindows,
   FaApple,
@@ -30,6 +29,7 @@ import {
   SiSupabase,
   SiNotion,
   SiFirebase,
+  SiCplusplus,
 } from "react-icons/si";
 import { SkillCategory } from "@/types/skill";
 
@@ -43,7 +43,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
       { name: "JavaScript", icon: FaJs, color: "text-yellow-500" },
       { name: "Python", icon: FaPython, color: "text-blue-400" },
-      { name: "C++", icon: FaDatabase, color: "text-blue-600" },
+      { name: "C++", icon: SiCplusplus, color: "text-blue-600" },
       { name: "PHP", icon: FaPhp, color: "text-purple-500" },
       { name: "Java", icon: FaJava, color: "text-green-500" },
       { name: "Swift", icon: FaSwift, color: "text-orange-500" },

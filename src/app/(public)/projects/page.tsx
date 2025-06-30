@@ -2,7 +2,11 @@ import { PageSubTitle, PageTitle, Text } from "@/components/ui";
 import { ProjectCard } from "@/components/project";
 import { projects } from "@/config/project";
 import { JSX } from "react";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "projectsページ",
+};
 /**
  * @description プロジェクトページのコンポーネント
  *

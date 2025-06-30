@@ -2,8 +2,12 @@ import { ContactCard } from "@/components/contact";
 import { PageTitle, Text } from "@/components/ui";
 import { contacts } from "@/config/contact";
 import { Contact } from "@/types/contact";
+import { Metadata } from "next";
 import { JSX } from "react";
 
+export const metadata: Metadata = {
+  title: "contactページ",
+};
 /**
  * @description 連絡先情報を一覧で表示するページです。
  *

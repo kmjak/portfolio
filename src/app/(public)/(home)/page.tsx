@@ -1,4 +1,5 @@
 import { PageTitle, Text } from "@/components/ui";
+import { faceUrl } from "@/config/blob";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,7 +13,7 @@ export default function Home() {
     <div className="h-full w-full mx-auto px-4 mt-6 md:mt-12 text-center">
       <div className="flex justify-center mb-3">
         <Image
-          src="/face.png"
+          src={faceUrl}
           alt="Maoto Okumuraの顔写真"
           width={300}
           height={300}

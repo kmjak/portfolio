@@ -1,12 +1,13 @@
 import { SkillCategoriesCard } from "@/components/skill";
 import { PageTitle, Text } from "@/components/ui";
+import { JSX } from "react";
 
 /**
  * @description Skillsページのコンポーネント
  *
  * @returns {JSX.Element} - SkillsPageコンポーネント
  */
-export default function SkillsPage() {
+export default function SkillsPage(): JSX.Element {
   return (
     <div className="min-h-screen w-full mx-auto px-4 py-8 md:py-12">
       <div className="max-w-6xl mx-auto">

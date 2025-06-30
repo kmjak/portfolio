@@ -6,6 +6,11 @@ import {
   CertificationSection,
 } from "@/components/about";
 import { PageTitle, Text } from "@/components/ui";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Aboutページ",
+};
 
 /**
  * @description Aboutページのコンポーネント

@@ -34,7 +34,7 @@ import {
 import { SkillCategory } from "@/types/skill";
 
 /**
- * @description スキルカテゴリの情報を定義するインターフェースです
+ * @description スキルのカテゴリとそのスキルを定義する配列です。
  */
 export const skillCategories: SkillCategory[] = [
   {

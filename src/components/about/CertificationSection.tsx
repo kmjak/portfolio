@@ -1,6 +1,6 @@
 import { Text } from "@/components/ui";
 import AboutSection from "./AboutSection";
-import { JSX } from "react";
+import { JSX, memo } from "react";
 import { certifications } from "@/config/about";
 import { AboutDetails } from "@/types/about";
 
@@ -9,7 +9,7 @@ import { AboutDetails } from "@/types/about";
  *
  * @returns {JSX.Element} - 資格セクションの内容を含むコンポーネント
  */
-export default function CertificationSection(): JSX.Element {
+function CertificationSectionComponent(): JSX.Element {
   return (
     <AboutSection title="資格">
       <ul className="grid grid-cols-1 gap-3">
@@ -24,3 +24,5 @@ export default function CertificationSection(): JSX.Element {
     </AboutSection>
   );
 }
+
+export const CertificationSection = memo(CertificationSectionComponent);

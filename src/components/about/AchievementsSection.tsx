@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { JSX, memo } from "react";
 import { Text } from "@/components/ui";
 import AboutSection from "./AboutSection";
 import { achievements } from "@/config/about";
@@ -8,7 +8,7 @@ import { achievements } from "@/config/about";
  *
  * @returns {JSX.Element} - 実績セクション
  */
-export default function AchievementsSectionComponent(): JSX.Element {
+function AchievementsSectionComponent(): JSX.Element {
   return (
     <AboutSection title="実績">
       {achievements.map((achievement) => (
@@ -19,3 +19,5 @@ export default function AchievementsSectionComponent(): JSX.Element {
     </AboutSection>
   );
 }
+
+export const AchievementsSection = memo(AchievementsSectionComponent);

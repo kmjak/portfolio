@@ -1,1 +1,1 @@
-export type { Certification } from "./Certification";
+export type { AboutDetails } from "./AboutDetails";

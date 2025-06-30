@@ -6,7 +6,7 @@ import { Skill } from "./Skill";
  * @property {string} title - カテゴリのタイトル
  * @property {Skill[]} skills - カテゴリに属するスキルの配列
  */
-export interface SkillCategories {
+export interface SkillCategory {
   title: string;
   skills: Skill[];
 }

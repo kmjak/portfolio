@@ -26,9 +26,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       <div className="mb-4">
         <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech, index) => (
+          {project.technologies.map((tech) => (
             <span
-              key={index}
+              key={tech}
               className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-md border border-gray-700"
             >
               {tech}

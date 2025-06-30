@@ -1,6 +1,11 @@
 import { SkillCategoriesCard } from "@/components/skill";
 import { PageTitle, Text } from "@/components/ui";
+import { Metadata } from "next";
 import { JSX } from "react";
+
+export const metadata: Metadata = {
+  title: "skillsページ",
+};
 
 /**
  * @description Skillsページのコンポーネント

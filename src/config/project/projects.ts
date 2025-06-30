@@ -169,7 +169,7 @@ export const projects: Project[] = [
     id: "Key Type",
     title: "Key Type",
     description:
-      "タイピング練習アプリ。スコア一覧で過去のスコアと一緒に、その時に間違えたキーとその回数を表示する機能により、苦手なキーについて知ることができます。デプロイ先ではまだ、Vercel PostgreSQLに移行でいていないので、単純なプレイしかできません。",
+      "タイピング練習アプリ。スコア一覧で過去のスコアと一緒に、その時に間違えたキーとその回数を表示する機能により、苦手なキーについて知ることができます。デプロイ先ではまだ、Vercel PostgreSQLに移行できていないので、単純なプレイしかできません。",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "json-server", "ESLint"],
     githubUrl: "https://github.com/KeyTypeApp/KeyType",
     liveUrl: "https://key-type-3bo2rxp7a-kmjaks-projects.vercel.app",

@@ -2,7 +2,7 @@ import { Text } from "@/components/ui";
 import AboutSection from "./AboutSection";
 import { JSX } from "react";
 import { certifications } from "@/config/about";
-import { Certification } from "@/types/about";
+import { AboutDetails } from "@/types/about";
 
 /**
  * @description 資格セクションコンポーネント
@@ -13,7 +13,7 @@ export default function CertificationSection(): JSX.Element {
   return (
     <AboutSection title="資格">
       <ul className="grid grid-cols-1 gap-3">
-        {certifications.map((certification: Certification) => (
+        {certifications.map((certification: AboutDetails) => (
           <li key={`${certification.date}-${certification.name}`}>
             <Text className="font-semibold">
               {certification.date}: {certification.name}

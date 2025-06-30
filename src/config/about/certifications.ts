@@ -1,6 +1,6 @@
-import { Certification } from "@/types/about";
+import { AboutDetails } from "@/types/about";
 
-export const certifications: Certification[] = [
+export const certifications: AboutDetails[] = [
   { date: "2024年05月", name: "CompTIA Security+" },
   { date: "2023年12月", name: "CompTIA A+" },
   { date: "2023年11月", name: "CompTIA Network+" },

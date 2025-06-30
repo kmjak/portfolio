@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { JSX, memo } from "react";
 import { Text } from "@/components/ui";
 import AboutSection from "./AboutSection";
 import { hobbies } from "@/config/about";
@@ -8,7 +8,7 @@ import { hobbies } from "@/config/about";
  *
  * @returns {JSX.Element} - 趣味セクション
  */
-export default function AboutHobbySection(): JSX.Element {
+function AboutHobbySectionComponent(): JSX.Element {
   return (
     <AboutSection title="趣味">
       <div className="grid grid-cols-1 gap-3">
@@ -21,3 +21,5 @@ export default function AboutHobbySection(): JSX.Element {
     </AboutSection>
   );
 }
+
+export const AboutHobbySection = memo(AboutHobbySectionComponent);

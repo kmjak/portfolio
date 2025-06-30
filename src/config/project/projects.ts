@@ -160,7 +160,7 @@ export const projects: Project[] = [
     id: "PoliLink",
     title: "PoliLink",
     description:
-      "SwiftUIとGinを使用した、マッチングアプリ。ユーザーが自分に合う政治家を見つけることができるアプリーションです。",
+      "SwiftUIとGinを使用した、マッチングアプリ。ユーザーが自分に合う政治家を見つけることができるアプリケーションです。",
     technologies: ["SwiftUI", "Swift", "Gin", "Go", "PostgreSQL", "Docker", "JWT", "Firebase"],
     githubUrl: "https://github.com/oca-hackU2025",
     featured: false,

@@ -1,4 +1,4 @@
-import { SkillCategories } from "@/types/skill";
+import { SkillCategory } from "@/types/skill";
 import { skillCategories } from "@/config/skill";
 import { CategoryCard } from "./CategoryCard";
 import { JSX } from "react";
@@ -11,7 +11,7 @@ import { JSX } from "react";
 export default function SkillCategoriesCard(): JSX.Element {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {skillCategories.map((category: SkillCategories) => (
+      {skillCategories.map((category: SkillCategory) => (
         <CategoryCard key={category.title} category={category} />
       ))}
     </div>

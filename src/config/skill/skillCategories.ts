@@ -31,12 +31,12 @@ import {
   SiNotion,
   SiFirebase,
 } from "react-icons/si";
-import { SkillCategories } from "@/types/skill";
+import { SkillCategory } from "@/types/skill";
 
 /**
  * @description スキルカテゴリの情報を定義するインターフェースです
  */
-export const skillCategories: SkillCategories[] = [
+export const skillCategories: SkillCategory[] = [
   {
     title: "プログラミング言語",
     skills: [

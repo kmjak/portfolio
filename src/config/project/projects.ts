@@ -25,16 +25,19 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: "Edolf Type",
-    title: "Edolf Type",
+    id: "Portful",
+    title: "Portful",
     description:
-      "リアルタイム対戦型のタイピングゲーム。ユーザーは、対戦相手に出題する単語と制限時間を自由に設定できます。ただし、設定した単語は自分自身が制限時間内に正しくタイピングできた場合にのみ相手に出題されます。逆に、設定時の入力に失敗した場合はその時点で敗北となります。そのため、「相手が苦手そうな単語」を選びつつ、「自分が確実に打てる範囲」で戦略を立てる必要があり、反射神経だけでなく戦略性も求められる頭脳戦が特徴です。",
+      "エンジニア特化の就活プラットフォームPortful。学生・学校・企業を繋ぎ、成績連携であなたのスキルを証明。未来のキャリアに繋がる出会いを創出します。",
     technologies: [
       "Next.js",
+      "Express.js",
+      "オニオンアーキテクチャ",
       "TypeScript",
       "Tailwind CSS",
       "Jotai",
       "clsx",
+      "tsyringe",
       "tailwind-merge",
       "Firebase",
       "Supabase",
@@ -43,7 +46,7 @@ export const projects: Project[] = [
       "Prettier",
       "nvm",
     ],
-    githubUrl: "https://github.com/kmjak/edolf-type",
+    githubUrl: "https://github.com/kmjak/portful",
     featured: true,
   },
 

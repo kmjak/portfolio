@@ -1,6 +1,7 @@
 import { AboutDetails } from "@/types/about";
 
 export const achievements: AboutDetails[] = [
+  { date: "2025年07月", name: "株式会社ジーニー 1dayインターンシップ[ Webコース ]: 23人中2位" },
   { date: "2025年06月", name: "Progate 学生アンバサダー" },
   { date: "2025年06月", name: "HackU 出場" },
   { date: "2025年06月", name: "株式会社ログラス 5Daysインターンシップ参加" },

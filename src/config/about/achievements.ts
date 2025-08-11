@@ -1,6 +1,8 @@
 import { AboutDetails } from "@/types/about";
 
 export const achievements: AboutDetails[] = [
+  { date: "2025年08月", name: "AtCoder Algorithm: 入緑" },
+  { date: "2025年07月", name: "チームラボ株式会社 サマーインターンシップ参加" },
   { date: "2025年07月", name: "株式会社ジーニー 1dayインターンシップ[ Webコース ]: 23人中2位" },
   { date: "2025年06月", name: "Progate 学生アンバサダー" },
   { date: "2025年06月", name: "HackU 出場" },

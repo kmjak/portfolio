@@ -14,7 +14,7 @@ export default function AboutAtCoderSection(): JSX.Element {
         <div className="bg-gray-800 rounded-lg p-4 border border-gray-600">
           <Text className="font-semibold mb-2">Algorithm</Text>
           <Text className="font-bold text-lg sm:text-lg md:text-lg lg:text-lg">
-            最高レート: 790
+            最高レート: 888
           </Text>
         </div>
         <div className="bg-gray-800 rounded-lg p-4 border border-gray-600">

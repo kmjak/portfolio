@@ -6,6 +6,14 @@ const allProjects: Project[] = [];
 const latestThreeProjects = allProjects.slice(0, 3);
 ---
 
-<ul class="space-y-2">
-  {latestThreeProjects.map(({ title, link }) => <HomeCardItem title={title} link={link} />)}
-</ul>
+{
+  latestThreeProjects.length === 0 ? (
+    <p class="text-sm text-neutral-500 text-center">表示するプロジェクトがありません。</p>
+  ) : (
+    <ul class="space-y-2">
+      {latestThreeProjects.map(({ title, link }) => (
+        <HomeCardItem title={title} link={link} />
+      ))}
+    </ul>
+  )
+}

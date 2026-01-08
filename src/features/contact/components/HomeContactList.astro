@@ -3,10 +3,14 @@ import { contacts } from "../constants/contacts";
 import HomeContactItem from "./HomeContactItem.astro";
 ---
 
-<ul class={`grid grid-cols-1 md:grid-cols-2 gap-4 p-6`}>
-  {
-    contacts.map(({ link, icon, value }) => (
-      <HomeContactItem link={link} icon={icon} value={value} />
-    ))
-  }
-</ul>
+{
+  contacts.length === 0 ? (
+    <p class="p-6 text-center text-neutral-500 text-sm">Contact情報がありません。</p>
+  ) : (
+    <ul class={`grid grid-cols-1 md:grid-cols-2 gap-4 p-6`}>
+      {contacts.map(({ link, icon, value }) => (
+        <HomeContactItem link={link} icon={icon} value={value} />
+      ))}
+    </ul>
+  )
+}

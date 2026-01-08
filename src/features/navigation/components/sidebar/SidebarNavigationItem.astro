@@ -11,7 +11,7 @@ const { path, title, isActive } = Astro.props;
 <li class="h-10 2xl:h-12 w-full">
   <a
     href={path}
-    class={`flex h-full items-center justify-center rounded-lg text-sm xl:text-base font-medium transition${
+    class={`flex h-full items-center justify-center rounded-lg text-sm xl:text-base font-medium transition ${
       isActive
         ? "bg-blue-500 text-white"
         : "text-neutral-600 hover:bg-neutral-200 hover:text-neutral-900"

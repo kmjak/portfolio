@@ -11,10 +11,14 @@ const latestThreeBlogs = allBlogs
   .slice(0, 3);
 ---
 
-<ul class="p-4 space-y-4">
-  {
-    latestThreeBlogs.map(({ frontmatter, url }) => (
-      <HomeBlogItem frontmatter={frontmatter} url={url} />
-    ))
-  }
-</ul>
+{
+  latestThreeBlogs.length === 0 ? (
+    <p class="text-sm text-neutral-500 text-center">表示するブログがありません。</p>
+  ) : (
+    <ul class="space-y-4">
+      {latestThreeBlogs.map(blog => (
+        <HomeBlogItem frontmatter={blog.frontmatter} url={blog.url} />
+      ))}
+    </ul>
+  )
+}

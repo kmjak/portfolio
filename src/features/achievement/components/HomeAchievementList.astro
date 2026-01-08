@@ -6,6 +6,14 @@ const allAchievements: Achievement[] = [];
 const lastThreeAchievements = allAchievements.slice(0, 3);
 ---
 
-<ul class="space-y-2">
-  {lastThreeAchievements.map(({ title, link }) => <HomeCardItem title={title} link={link} />)}
-</ul>
+{
+  lastThreeAchievements.length === 0 ? (
+    <p class="text-sm text-neutral-500 text-center">表示する実績がありません。</p>
+  ) : (
+    <ul class="space-y-2">
+      {lastThreeAchievements.map(({ title, link }) => (
+        <HomeCardItem title={title} link={link} />
+      ))}
+    </ul>
+  )
+}

@@ -14,18 +14,19 @@ export default function HamburgerSection({ currentPath }: { currentPath: string 
   };
 
   useEffect(() => {
-    const handleEscapeKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isHamburgerOpen) {
+    if (!isHamburgerOpen) return;
+
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
         handleCloseHamburger();
       }
     };
 
     document.addEventListener("keydown", handleEscapeKey);
-
     return () => {
       document.removeEventListener("keydown", handleEscapeKey);
     };
-  }, [handleCloseHamburger]);
+  }, [isHamburgerOpen]);
 
   return (
     <div className="lg:hidden">

@@ -1,23 +1,56 @@
 ---
-import "../styles/global.css";
+import "@/styles/global.css";
 import "@/styles/starwind.css";
+import Separator from "@/shared/components/starwind/separator/Separator.astro";
+import Sidebar from "@/features/navigation/components/sidebar/Sidebar.astro";
+import { HamburgerSection } from "@/features/navigation/components/hamburger";
 
 interface Props {
   title: string;
+  heading: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  heading,
+  description = `kmjak | ${title}のページです。Web開発に関するブログ記事や、私の連絡先・経歴などを掲載しています。`,
+} = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/icon.jpg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="ポートフォリオ, エンジニア, kmjak, ブログ, Web開発" />
+    <meta name="author" content="kmjak" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL("/icon.jpg", Astro.url).toString()} />
     <title>kmjak | {title}</title>
   </head>
   <body>
-    <slot />
+    <div class="flex h-screen w-screen">
+      <Sidebar />
+      <Separator orientation="vertical" class="mx-2 h-screen w-px bg-neutral-300 hidden lg:flex" />
+      <main class="flex-1 min-h-screen overflow-y-scroll">
+        <div class="sticky top-0 z-10 bg-white">
+          <div class="flex justify-around items-center">
+            <h1 class="m-4 md:m-6 xl:m-8 text-2xl md:text-3xl xl:text-4xl font-bold">
+              {heading}
+            </h1>
+            <HamburgerSection client:media="(max-width: 1023px)" currentPath={currentPath} />
+          </div>
+          <Separator class="mb-8 h-px bg-neutral-300" />
+        </div>
+        <slot />
+      </main>
+    </div>
   </body>
 </html>

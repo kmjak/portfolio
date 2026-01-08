@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+import type { BlogPost } from "../types";
+
+interface Props {
+  frontmatter: Omit<BlogPost["frontmatter"], "description">;
+  url: string;
+}
+
+const { frontmatter, url } = Astro.props;
+---
+
+<li class="group/blog">
+  <a
+    href={url}
+    class="block rounded-lg overflow-hidden border border-neutral-200 hover:opacity-50 transition-all duration-200 hover:shadow-md"
+  >
+    <div class="w-full h-40 bg-indigo-500 flex items-center justify-center">
+      <Icon name={frontmatter.icon} class="w-12 h-12 text-indigo-200" />
+    </div>
+    <div class="p-4">
+      <p class="text-sm font-semibold text-neutral-800 transition-colors line-clamp-2">
+        {frontmatter.title}
+      </p>
+    </div>
+  </a>
+</li>

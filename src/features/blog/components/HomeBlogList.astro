@@ -1,0 +1,24 @@
+---
+import HomeBlogItem from "./HomeBlogItem.astro";
+import type { BlogPost } from "../types";
+
+const allBlogs = Object.values(import.meta.glob<BlogPost>("src/pages/blog/*.md", { eager: true }));
+
+const latestThreeBlogs = allBlogs
+  .sort(
+    (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+  )
+  .slice(0, 3);
+---
+
+{
+  latestThreeBlogs.length === 0 ? (
+    <p class="text-sm text-neutral-500 text-center">表示するブログがありません。</p>
+  ) : (
+    <ul class="space-y-4">
+      {latestThreeBlogs.map(blog => (
+        <HomeBlogItem frontmatter={blog.frontmatter} url={blog.url} />
+      ))}
+    </ul>
+  )
+}

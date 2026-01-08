@@ -1,0 +1,28 @@
+---
+import { navigationRoutes } from "../../constants/navigationRoute";
+import Separator from "@/shared/components/starwind/separator/Separator.astro";
+import SidebarNavigationItem from "./SidebarNavigationItem.astro";
+
+interface Props {}
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="flex">
+  <ul class="flex flex-col rounded-xl p-2 w-full">
+    {
+      Object.values(navigationRoutes).map((route, index) => {
+        const isActive =
+          route.path === "/" ? currentPath === "/" : currentPath.startsWith(route.path);
+
+        return (
+          <>
+            {index !== 0 && <Separator orientation="horizontal" class="my-2 h-px bg-neutral-300" />}
+
+            <SidebarNavigationItem path={route.path} title={route.title} isActive={isActive} />
+          </>
+        );
+      })
+    }
+  </ul>
+</nav>

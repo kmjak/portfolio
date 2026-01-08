@@ -1,0 +1,11 @@
+---
+import type { Achievement } from "../types";
+import HomeCardItem from "@/shared/components/card/HomeCardItem.astro";
+
+const allAchievements: Achievement[] = [];
+const lastThreeAchievements = allAchievements.slice(0, 3);
+---
+
+<ul class="space-y-2">
+  {lastThreeAchievements.map(({ title, link }) => <HomeCardItem title={title} link={link} />)}
+</ul>

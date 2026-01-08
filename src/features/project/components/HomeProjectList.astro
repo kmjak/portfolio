@@ -1,0 +1,11 @@
+---
+import HomeCardItem from "@/shared/components/card/HomeCardItem.astro";
+import type { Project } from "../types";
+
+const allProjects: Project[] = [];
+const latestThreeProjects = allProjects.slice(0, 3);
+---
+
+<ul class="space-y-2">
+  {latestThreeProjects.map(({ title, link }) => <HomeCardItem title={title} link={link} />)}
+</ul>

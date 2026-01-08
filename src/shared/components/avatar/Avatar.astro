@@ -7,9 +7,10 @@ interface Props {
   path: string;
   size?: AvatarSize;
   className?: string;
+  alt?: string;
 }
 
-const { path, size = "md", className } = Astro.props;
+const { path, size = "md", className, alt = "Avatar" } = Astro.props;
 
 const sizeClasses: Record<AvatarSize, string> = {
   sm: "w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24",
@@ -28,7 +29,7 @@ const sizeMap: Record<AvatarSize, number> = {
 
 <Image
   src={path}
-  alt={"Avatar"}
+  alt={alt}
   width={sizeMap[size]}
   height={sizeMap[size]}
   class={`rounded-full ${className} ${sizeClasses[size]}`}

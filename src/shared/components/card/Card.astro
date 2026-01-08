@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  iconName: string;
+  cardTitle: string | undefined;
+  hasHeader?: boolean;
+}
+
+const { iconName, cardTitle, hasHeader = true } = Astro.props;
+---
+
+<section
+  class="w-full h-fit rounded-xl shadow-lg border border-neutral-200 hover:shadow-2xl transition-all duration-300 overflow-hidden"
+>
+  <div class="py-5 px-6 border-b border-neutral-200">
+    {
+      hasHeader && (
+        <div class="flex gap-3 items-center">
+          <div class="p-2 border border-neutral-400 rounded-lg">
+            <Icon name={iconName} class={cardTitle ? "w-6 h-6" : "w-12 h-12"} />
+          </div>
+          {cardTitle && <h2 class="text-xl font-bold text-neutral-800">{cardTitle}</h2>}
+        </div>
+      )
+    }
+  </div>
+  <div class="p-4">
+    <slot />
+  </div>
+</section>

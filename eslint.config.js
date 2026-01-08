@@ -43,7 +43,7 @@ export default [
         },
       ],
       "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/prefer-const": "error",
+      "prefer-const": "error",
     },
   },
   ...astro.configs["flat/recommended"],
@@ -71,6 +71,7 @@ export default [
       sourceType: "module",
       globals: {
         astro: "readonly",
+        document: "readonly",
       },
     },
     plugins: {
@@ -81,7 +82,7 @@ export default [
       "no-debugger": "error",
       "prefer-const": "error",
       "no-var": "error",
-      "no-unused-vars": "off", // unused-importsプラグインに委任
+      "no-unused-vars": "off",
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": [
         "error",

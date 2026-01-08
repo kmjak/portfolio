@@ -14,18 +14,18 @@ const { iconName, cardTitle, hasHeader = true, sectionClassName = "" } = Astro.p
 <section
   class={`w-full h-fit rounded-xl shadow-lg border border-neutral-200 hover:shadow-2xl transition-all duration-300 overflow-hidden ${sectionClassName}`}
 >
-  <div class="py-5 px-6 border-b border-neutral-200">
-    {
-      hasHeader && (
+  {
+    hasHeader && (
+      <div class="py-5 px-6 border-b border-neutral-200">
         <div class="flex gap-3 items-center">
           <div class="p-2 border border-neutral-400 rounded-lg">
             <Icon name={iconName} class="w-6 h-6" />
           </div>
           {cardTitle && <h2 class="text-lg md:text-xl font-bold text-neutral-800">{cardTitle}</h2>}
         </div>
-      )
-    }
-  </div>
+      </div>
+    )
+  }
   <div class="p-4">
     <slot />
   </div>

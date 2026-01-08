@@ -28,7 +28,7 @@ const navigationRoutes: Record<
   },
   contact: {
     path: "/contact/",
-    title: "contact",
+    title: "Contact",
   },
 } as const;
 

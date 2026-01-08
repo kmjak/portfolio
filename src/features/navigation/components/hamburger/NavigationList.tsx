@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { navigationRoutes } from "../../constants/navigationRoute";
+import { navigationRoutes } from "../../constants/navigationRoutes";
 import NavigationItem from "./NavigationItem";
 
 const NavigationList = ({ currentPath }: { currentPath: string }) => {

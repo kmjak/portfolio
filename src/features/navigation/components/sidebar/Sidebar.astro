@@ -13,7 +13,12 @@ const { className } = Astro.props;
   class={`hidden lg:flex flex-col space-y-2 xl:space-y-6 2xl:space-y-8 py-8 w-64 2xl:w-80 h-screen ${className}`}
 >
   <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
-    <Avatar path="/icon.jpg" size="lg" className="md:w-36 md:h-36" />
+    <Avatar
+      path="/icon.jpg"
+      size="lg"
+      className="md:w-36 md:h-36"
+      alt="奥村真翔（kmjak）のプロフィール写真"
+    />
     <p class="text-xl xl:text-2xl font-semibold text-center">奥村真翔（kmjak）</p>
   </div>
   <SidebarNavigationList />

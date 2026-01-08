@@ -1,7 +1,24 @@
 ---
 import DefaultLayout from "src/layouts/DefaultLayout.astro";
+import HomeContactSection from "@/features/contact/components/HomeContactSection.astro";
+import HomeProjectSection from "@/features/project/components/HomeProjectSection.astro";
+import HomeAchievementSection from "@/features/achievement/components/HomeAchievementSection.astro";
+import HomeBlogSection from "@/features/blog/components/HomeBlogSection.astro";
+
+const title = "ホームページ";
+const heading = "ホームページ";
 ---
 
-<DefaultLayout title="ホームページ">
-  <h1>ポートフォリオサイト</h1>
+<DefaultLayout title={title} heading={heading}>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-11/12 mx-auto">
+    <div class="col-span-1 md:col-span-2 flex flex-col gap-8">
+      <div class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-4">
+        <HomeAchievementSection />
+        <HomeProjectSection />
+      </div>
+      <HomeContactSection />
+    </div>
+
+    <HomeBlogSection />
+  </div>
 </DefaultLayout>

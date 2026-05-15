@@ -13,18 +13,18 @@ const backgrounds = await fetchBackgrounds();
   >
     {
       backgrounds.length > 0 ? (
-        <ul class="w-11/12 mx-auto space-y-4">
+        <ul class="space-x-4">
           {backgrounds.map(background => (
-            <Card hasHeader={false}>
-              <li>
-                <a href={`/backgrounds/${background.id}`}>
+            <a href={`/backgrounds/${background.id}`}>
+              <Card hasHeader={false}>
+                <li>
                   <p class="text-xl font-semibold mb-2">{background.title}</p>
                   <small class="text-sm text-gray-500">
                     日付: {new Date(background.eventDate ?? "").toLocaleDateString("ja-JP")}
                   </small>
-                </a>
-              </li>
-            </Card>
+                </li>
+              </Card>
+            </a>
           ))}
         </ul>
       ) : (

@@ -1,0 +1,29 @@
+---
+import Card from "@/shared/components/card/Card.astro";
+import { fetchAchievements } from "../services/fetchAchievements";
+
+const achievements = await fetchAchievements();
+---
+
+<Card iconName="mdi:achievement-outline" cardTitle="実績 ">
+  {
+    achievements.length > 0 ? (
+      <ul class="space-x-4">
+        {achievements.map(achievement => (
+          <a href={`/achievements/${achievement.id}`}>
+            <Card hasHeader={false}>
+              <li>
+                <p class="text-xl font-semibold mb-2">{achievement.title}</p>
+                <small class="text-sm text-gray-500">
+                  日付: {new Date(achievement.achievedAt ?? "").toLocaleDateString("ja-JP")}
+                </small>
+              </li>
+            </Card>
+          </a>
+        ))}
+      </ul>
+    ) : (
+      <p class="text-center text-gray-500">実績がないです。</p>
+    )
+  }
+</Card>

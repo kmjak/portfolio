@@ -12,7 +12,9 @@ const latestThreeProjects = allProjects.slice(0, 3);
   ) : (
     <ul class="space-y-2">
       {latestThreeProjects.map(({ title, link }) => (
-        <HomeCardItem title={title} link={link} />
+        <a href={link}>
+          <HomeCardItem title={title} />
+        </a>
       ))}
     </ul>
   )

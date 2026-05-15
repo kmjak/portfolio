@@ -1,6 +1,6 @@
 ---
 import HomeCardItem from "@/shared/components/card/HomeCardItem.astro";
-import type { Achievement } from "../types";
+import type { Achievement } from "../types/Achievement";
 
 const allAchievements: Achievement[] = [];
 const lastThreeAchievements = allAchievements.slice(0, 3);
@@ -11,8 +11,10 @@ const lastThreeAchievements = allAchievements.slice(0, 3);
     <p class="text-sm text-neutral-500 text-center">表示する実績がありません。</p>
   ) : (
     <ul class="space-y-2">
-      {lastThreeAchievements.map(({ title, link }) => (
-        <HomeCardItem title={title} link={link} />
+      {lastThreeAchievements.map(({ title, id }: Achievement) => (
+        <a href={`/achievements/${id}`}>
+          <HomeCardItem title={title} />
+        </a>
       ))}
     </ul>
   )

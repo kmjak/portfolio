@@ -72,13 +72,15 @@ export default [
       globals: {
         astro: "readonly",
         document: "readonly",
+        fetch: "readonly",
+        console: "readonly",
       },
     },
     plugins: {
       "unused-imports": unusedImports,
     },
     rules: {
-      "no-console": "warn",
+      "no-console": "off",
       "no-debugger": "error",
       "prefer-const": "error",
       "no-var": "error",

@@ -1,0 +1,35 @@
+---
+import Card from "@/shared/components/card/Card.astro";
+import { fetchBackgrounds } from "../services/fetchBackgrounds";
+
+const backgrounds = await fetchBackgrounds();
+---
+
+<section>
+  <Card
+    iconName="heroicons:information-circle"
+    cardTitle="経歴"
+    sectionClassName="col-span-1 md:col-span-2 xl:col-span-1"
+  >
+    {
+      backgrounds.length > 0 ? (
+        <ul class="w-11/12 mx-auto space-y-4">
+          {backgrounds.map(background => (
+            <Card hasHeader={false}>
+              <li>
+                <a href={`/backgrounds/${background.id}`}>
+                  <p class="text-xl font-semibold mb-2">{background.title}</p>
+                  <small class="text-sm text-gray-500">
+                    Event Date: {new Date(background.eventDate ?? "").toLocaleDateString("ja-JP")}
+                  </small>
+                </a>
+              </li>
+            </Card>
+          ))}
+        </ul>
+      ) : (
+        <p class="text-center text-gray-500">No background information available.</p>
+      )
+    }
+  </Card>
+</section>

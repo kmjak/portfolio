@@ -2,13 +2,13 @@
 import { Icon } from "astro-icon/components";
 
 interface Props {
-  iconName: string;
+  iconName?: string;
   cardTitle?: string;
   hasHeader?: boolean;
   sectionClassName?: string;
 }
 
-const { iconName, cardTitle, hasHeader = true, sectionClassName = "" } = Astro.props;
+const { iconName = "default", cardTitle, hasHeader = true, sectionClassName = "" } = Astro.props;
 ---
 
 <section

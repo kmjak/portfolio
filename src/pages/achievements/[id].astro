@@ -1,0 +1,67 @@
+---
+import { fetchAchievementById } from "@/features/achievement/services/fetchAchievementById";
+import Card from "@/shared/components/card/Card.astro";
+import DefaultLayout from "src/layouts/DefaultLayout.astro";
+
+export const prerender = false;
+
+const { id } = Astro.params;
+
+if (!id) {
+  return Astro.redirect("/achievements");
+}
+
+const achievement = await fetchAchievementById(id);
+
+if (!achievement) {
+  return Astro.redirect("/achievements");
+}
+
+const title = achievement.title;
+const heading = `実績詳細`;
+---
+
+<DefaultLayout title={title} heading={heading}>
+  <div class="flex justify-center">
+    <div class="max-w-2xl w-full px-4">
+      <Card hasHeader={false}>
+        <div class="space-y-6">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">{achievement.title}</h2>
+
+            <div class="mb-6">
+              <p class="text-sm text-gray-500 mb-2">日付</p>
+              <p class="text-lg">
+                {
+                  new Date(achievement.achievedAt).toLocaleDateString("ja-JP", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })
+                }
+              </p>
+            </div>
+
+            {
+              achievement.description && (
+                <div class="mb-6">
+                  <p class="text-sm text-gray-500 mb-2">詳細</p>
+                  <p class="text-base whitespace-pre-wrap">{achievement.description}</p>
+                </div>
+              )
+            }
+          </div>
+
+          <div class="pt-6 border-t">
+            <a
+              href="/achievements"
+              class="inline-block px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded transition"
+            >
+              実績一覧に戻る
+            </a>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </div>
+</DefaultLayout>

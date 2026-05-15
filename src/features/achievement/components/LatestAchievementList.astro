@@ -1,18 +1,18 @@
 ---
 import HomeCardItem from "@/shared/components/card/HomeCardItem.astro";
+import { fetchLatestThreeAchievements } from "../services/fetchLatestThreeAchievements";
 import type { Achievement } from "../types/Achievement";
 
-const allAchievements: Achievement[] = [];
-const lastThreeAchievements = allAchievements.slice(0, 3);
+const lastThreeAchievements: Achievement[] = await fetchLatestThreeAchievements();
 ---
 
 {
   lastThreeAchievements.length === 0 ? (
     <p class="text-sm text-neutral-500 text-center">表示する実績がありません。</p>
   ) : (
-    <ul class="space-y-2">
+    <ul class="space-y-4">
       {lastThreeAchievements.map(({ title, id }: Achievement) => (
-        <a href={`/achievements/${id}`}>
+        <a href={`/achievements/${id}`} class="block">
           <HomeCardItem title={title} />
         </a>
       ))}

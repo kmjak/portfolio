@@ -8,9 +8,9 @@ const achievements = await fetchAchievements();
 <Card iconName="mdi:achievement-outline" cardTitle="実績 ">
   {
     achievements.length > 0 ? (
-      <ul class="space-x-4">
+      <ul class="space-y-4">
         {achievements.map(achievement => (
-          <a href={`/achievements/${achievement.id}`}>
+          <a href={`/achievements/${achievement.id}`} class="block">
             <Card hasHeader={false}>
               <li>
                 <p class="text-xl font-semibold mb-2">{achievement.title}</p>

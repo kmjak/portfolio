@@ -13,9 +13,9 @@ const backgrounds = await fetchBackgrounds();
   >
     {
       backgrounds.length > 0 ? (
-        <ul class="space-x-4">
+        <ul class="space-y-4">
           {backgrounds.map(background => (
-            <a href={`/backgrounds/${background.id}`}>
+            <a href={`/backgrounds/${background.id}`} class="block">
               <Card hasHeader={false}>
                 <li>
                   <p class="text-xl font-semibold mb-2">{background.title}</p>

@@ -1,5 +1,15 @@
 import { z } from "zod";
-import type { backgroundSchema, backgroundsSchema } from "../schemas/backgroundSchema";
+
+const backgroundSchema = z.object({
+  id: z.string().uuid(),
+  title: z.string().min(1).max(50),
+  description: z.string().max(200).optional(),
+  eventDate: z.string().datetime(),
+});
+
+const backgroundsSchema = z.array(backgroundSchema);
+
+export { backgroundSchema, backgroundsSchema };
 
 type Background = z.infer<typeof backgroundSchema>;
 type Backgrounds = z.infer<typeof backgroundsSchema>;

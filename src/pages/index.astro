@@ -1,9 +1,9 @@
 ---
-import DefaultLayout from "src/layouts/DefaultLayout.astro";
+import HomeAchievementSection from "@/features/achievement/components/HomeAchievementSection.astro";
+import LatestBlogSection from "@/features/blog/components/LatestBlogSection.astro";
 import HomeContactSection from "@/features/contact/components/HomeContactSection.astro";
 import HomeProjectSection from "@/features/project/components/HomeProjectSection.astro";
-import HomeAchievementSection from "@/features/achievement/components/HomeAchievementSection.astro";
-import HomeBlogSection from "@/features/blog/components/HomeBlogSection.astro";
+import DefaultLayout from "src/layouts/DefaultLayout.astro";
 
 const title = "ホームページ";
 const heading = "ホームページ";
@@ -19,6 +19,6 @@ const heading = "ホームページ";
       <HomeContactSection />
     </div>
 
-    <HomeBlogSection />
+    <LatestBlogSection />
   </div>
 </DefaultLayout>

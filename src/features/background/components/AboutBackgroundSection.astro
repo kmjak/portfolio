@@ -20,7 +20,7 @@ const backgrounds = await fetchBackgrounds();
                 <a href={`/backgrounds/${background.id}`}>
                   <p class="text-xl font-semibold mb-2">{background.title}</p>
                   <small class="text-sm text-gray-500">
-                    Event Date: {new Date(background.eventDate ?? "").toLocaleDateString("ja-JP")}
+                    日付: {new Date(background.eventDate ?? "").toLocaleDateString("ja-JP")}
                   </small>
                 </a>
               </li>

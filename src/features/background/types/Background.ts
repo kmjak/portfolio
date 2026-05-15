@@ -9,9 +9,7 @@ const backgroundSchema = z.object({
 
 const backgroundsSchema = z.array(backgroundSchema);
 
-export { backgroundSchema, backgroundsSchema };
-
 type Background = z.infer<typeof backgroundSchema>;
 type Backgrounds = z.infer<typeof backgroundsSchema>;
 
-export type { Background, Backgrounds };
+export { backgroundSchema, backgroundsSchema, type Background, type Backgrounds };

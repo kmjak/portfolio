@@ -5,7 +5,7 @@ import { fetchAchievements } from "../services/fetchAchievements";
 const achievements = await fetchAchievements();
 ---
 
-<Card iconName="mdi:achievement-outline" cardTitle="実績 ">
+<Card iconName="mdi:medal-outline" cardTitle="実績 ">
   {
     achievements.length > 0 ? (
       <ul class="space-y-4">

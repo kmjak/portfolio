@@ -1,0 +1,21 @@
+---
+import HomeCardItem from "@/shared/components/card/HomeCardItem.astro";
+import { fetchFeaturedProjects } from "../services/fetchFeaturedProjects";
+import type { Project } from "../types/Project";
+
+const featuredProjects: Project[] = await fetchFeaturedProjects(3);
+---
+
+{
+  featuredProjects.length === 0 ? (
+    <p class="text-sm text-neutral-500 text-center">表示するプロジェクトがありません。</p>
+  ) : (
+    <ul class="space-y-4">
+      {featuredProjects.map(({ title, id }: Project) => (
+        <a href={`/projects/${id}`} class="block">
+          <HomeCardItem title={title} />
+        </a>
+      ))}
+    </ul>
+  )
+}

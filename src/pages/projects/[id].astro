@@ -1,0 +1,32 @@
+---
+import ProjectDetail from "@/features/project/components/ProjectDetail.astro";
+import { fetchProjectById } from "@/features/project/services/fetchProjectById";
+import DefaultLayout from "src/layouts/DefaultLayout.astro";
+
+export const prerender = false;
+
+const { id } = Astro.params;
+
+console.log("Project ID:", id);
+
+if (!id) {
+  return Astro.redirect("/projects");
+}
+
+const project = await fetchProjectById(id);
+
+if (!project) {
+  return Astro.redirect("/projects");
+}
+
+const title = project.title;
+const heading = "プロジェクト詳細";
+---
+
+<DefaultLayout title={title} heading={heading}>
+  <div class="flex justify-center">
+    <div class="max-w-4xl w-full px-4">
+      <ProjectDetail project={project} />
+    </div>
+  </div>
+</DefaultLayout>

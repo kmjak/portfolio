@@ -1,5 +1,6 @@
 ---
 import { fetchSkills } from "@/features/project/services/fetchSkills";
+import { Icon } from "astro-icon/components";
 import DefaultLayout from "src/layouts/DefaultLayout.astro";
 
 const skills = await fetchSkills();
@@ -26,62 +27,89 @@ const skillsByCategory = skills.reduce(
   {} as Record<string, typeof skills>
 );
 
+const categoryIcons: Record<string, string> = {
+  プログラミング言語: "heroicons:command-line",
+  フレームワーク: "heroicons:cube",
+  データベース: "heroicons:circle-stack",
+  インフラ: "heroicons:cloud",
+  ツール: "heroicons:wrench-screwdriver",
+  デザイン: "heroicons:paint-brush",
+  その他: "heroicons:ellipsis-horizontal-circle",
+};
+
 const title = "Skills";
 const heading = "スキルセット";
 ---
 
 <DefaultLayout title={title} heading={heading}>
-  <div class="max-w-5xl mx-auto px-4 py-12 space-y-16">
-    <section class="space-y-4">
-      <p class="text-xl text-neutral-500 font-medium [text-wrap:pretty]">
-        <span class="inline-block">これまでに触れてきた技術スタックを</span><span class="inline-block">カテゴリ別にまとめています。</span><span class="inline-block">実務や個人開発での経験に基づいています。</span>
+  <div class="max-w-5xl mx-auto px-4 py-16 space-y-24">
+    {/* シンプルで力強いヘッダー */}
+    <section class="space-y-6">
+      <p
+        class="text-xl md:text-2xl text-neutral-800 font-black leading-tight [text-wrap:pretty] max-w-4xl"
+      >
+        <span class="inline-block"
+          >これまでに触れてきた技術スタックをカテゴリ別にまとめています。</span
+        ><br class="hidden md:block" /><span class="inline-block"
+          >実務や個人開発での経験に基づいています。</span
+        >
       </p>
     </section>
 
     {
       Object.entries(skillsByCategory).map(([categoryName, categorySkills]) => (
-        <section class="space-y-8">
-          <div class="flex items-center gap-4">
-            <h2 class="text-2xl font-black text-neutral-900 flex items-center gap-3">
-              <span class="w-1.5 h-7 bg-blue-600 rounded-full" />
-              {categoryName}
-            </h2>
-            <div class="flex-grow h-px bg-neutral-100" />
-            <span class="text-sm font-bold text-neutral-400 tabular-nums">
-              {categorySkills.length} SKILLS
-            </span>
+        <section class="space-y-12">
+          {/* プロジェクト詳細と統一感のあるヘッダー */}
+          <div class="flex items-center justify-between group">
+            <div class="flex items-center gap-4">
+              <div class="w-2 h-10 bg-blue-600 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.3)]" />
+              <div class="space-y-1">
+                <h2 class="text-3xl font-black text-neutral-900 tracking-tight flex items-center gap-3">
+                  <Icon
+                    name={categoryIcons[categoryName] || categoryIcons["その他"]}
+                    class="w-7 h-7 text-neutral-400 group-hover:text-blue-600 transition-colors"
+                  />
+                  {categoryName}
+                </h2>
+              </div>
+            </div>
+            <div class="hidden sm:flex items-center gap-3 text-neutral-300 font-bold tracking-tighter italic text-4xl opacity-20">
+              {categoryName.toUpperCase()}
+            </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12">
             {categorySkills.map(skill => (
-              <div class="group p-6 bg-white border border-neutral-100 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300">
-                <div class="space-y-4">
-                  <div class="flex justify-between items-start">
-                    <h3 class="text-lg font-bold text-neutral-800 group-hover:text-blue-600 transition-colors">
+              <div class="group relative space-y-4">
+                <div class="flex justify-between items-end border-b-2 border-neutral-50 pb-2 group-hover:border-blue-100 transition-colors duration-500">
+                  <div class="space-y-1">
+                    <h3 class="text-xl font-bold text-neutral-800 group-hover:text-blue-600 transition-colors duration-300">
                       {skill.name}
                     </h3>
-                    <div class="flex items-center gap-1.5">
-                      <span class="text-xs font-black text-blue-600/40 tabular-nums">LV.</span>
-                      <span class="text-lg font-black text-blue-600 tabular-nums leading-none">
-                        {skill.level}
-                      </span>
-                    </div>
                   </div>
-
-                  {/* レベルゲージ */}
-                  <div class="h-1.5 w-full bg-neutral-100 rounded-full overflow-hidden">
-                    <div
-                      class="h-full bg-blue-600 rounded-full transition-all duration-1000 ease-out group-hover:bg-blue-500"
-                      style={`width: ${skill.level * 10}%`}
-                    />
+                  <div class="flex items-baseline gap-1">
+                    <span class="text-3xl font-black text-neutral-900 tabular-nums leading-none group-hover:text-blue-600 transition-colors">
+                      {skill.level}
+                    </span>
+                    <span class="text-xs font-black text-neutral-300 uppercase tracking-widest">
+                      / 10
+                    </span>
                   </div>
-
-                  {skill.description && (
-                    <p class="text-sm text-neutral-500 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all [overflow-wrap:anywhere]">
-                      {skill.description}
-                    </p>
-                  )}
                 </div>
+
+                {/* ミニマルなレベルゲージ */}
+                <div class="relative h-1 w-full bg-neutral-100 rounded-full overflow-hidden">
+                  <div
+                    class="absolute top-0 left-0 h-full bg-neutral-900 rounded-full transition-all duration-1000 ease-out group-hover:bg-blue-600"
+                    style={`width: ${skill.level * 10}%`}
+                  />
+                </div>
+
+                {skill.description && (
+                  <p class="text-sm text-neutral-500 leading-relaxed font-medium [overflow-wrap:anywhere] group-hover:text-neutral-700 transition-colors">
+                    {skill.description}
+                  </p>
+                )}
               </div>
             ))}
           </div>
@@ -91,8 +119,8 @@ const heading = "スキルセット";
 
     {
       Object.keys(skillsByCategory).length === 0 && (
-        <div class="text-center py-20">
-          <p class="text-neutral-400 font-medium">スキルデータが見つかりませんでした。</p>
+        <div class="text-center py-32 border-2 border-dashed border-neutral-100 rounded-3xl">
+          <p class="text-xl text-neutral-300 font-bold">スキルデータが見つかりませんでした。</p>
         </div>
       )
     }

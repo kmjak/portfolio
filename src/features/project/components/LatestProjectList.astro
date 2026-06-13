@@ -1,18 +1,17 @@
 ---
 import HomeCardItem from "@/shared/components/card/HomeCardItem.astro";
-import type { Project } from "../types";
+import { fetchLatestProjects } from "../services/fetchLatestProjects";
 
-const allProjects: Project[] = [];
-const latestThreeProjects = allProjects.slice(0, 3);
+const latestThreeProjects = await fetchLatestProjects(3);
 ---
 
 {
   latestThreeProjects.length === 0 ? (
     <p class="text-sm text-neutral-500 text-center">表示するプロジェクトがありません。</p>
   ) : (
-    <ul class="space-y-2">
-      {latestThreeProjects.map(({ title, link }) => (
-        <a href={link} class="block">
+    <ul class="space-y-4">
+      {latestThreeProjects.map(({ title, id }) => (
+        <a href={`/projects/${id}`} class="block">
           <HomeCardItem title={title} />
         </a>
       ))}

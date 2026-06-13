@@ -33,8 +33,8 @@ const heading = "スキルセット";
 <DefaultLayout title={title} heading={heading}>
   <div class="max-w-5xl mx-auto px-4 py-12 space-y-16">
     <section class="space-y-4">
-      <p class="text-xl text-neutral-500 font-medium max-w-2xl">
-        これまでに触れてきた技術スタックをカテゴリ別にまとめています。実務や個人開発での経験に基づいています。
+      <p class="text-xl text-neutral-500 font-medium [text-wrap:pretty]">
+        <span class="inline-block">これまでに触れてきた技術スタックを</span><span class="inline-block">カテゴリ別にまとめています。</span><span class="inline-block">実務や個人開発での経験に基づいています。</span>
       </p>
     </section>
 
@@ -77,7 +77,7 @@ const heading = "スキルセット";
                   </div>
 
                   {skill.description && (
-                    <p class="text-sm text-neutral-500 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all">
+                    <p class="text-sm text-neutral-500 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all [overflow-wrap:anywhere]">
                       {skill.description}
                     </p>
                   )}

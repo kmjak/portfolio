@@ -1,5 +1,5 @@
 const navigationRoutes: Record<
-  "home" | "about" | "achievements" | "projects" | "blog" | "skills" | "contact",
+  "home" | "about" | "achievements" | "projects" | "blog" | "skills",
   { path: string; title: string }
 > = {
   home: {
@@ -25,10 +25,6 @@ const navigationRoutes: Record<
   skills: {
     path: "/skills/",
     title: "スキル",
-  },
-  contact: {
-    path: "/contact/",
-    title: "Contact",
   },
 } as const;
 

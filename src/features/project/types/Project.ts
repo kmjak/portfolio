@@ -6,7 +6,7 @@ import { techCategorySchema } from "../../tech_category/types/TechCategory";
 const projectSkillSchema = z.object({
   id: z.string(),
   name: z.string().min(1),
-  level: z.number().int().min(0).max(5).optional(),
+  level: z.number().int().min(0).max(10).optional(),
   description: z.string().nullable().optional(),
   categories: z.array(techCategorySchema).optional(),
 });

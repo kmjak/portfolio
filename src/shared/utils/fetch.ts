@@ -28,11 +28,11 @@ export const customFetch = async <T>({
   skipCache = false,
 }: FetchProps<T>): Promise<T> => {
   const method = options.method?.toUpperCase() || "GET";
-  if (method === "GET" && !skipCache) {
-    const cached = cache.get(url);
-    const now = Date.now();
+  const cached = method === "GET" && !skipCache ? cache.get(url) : null;
 
-    if (cached && now - cached.timestamp < CACHE_TTL) {
+  if (cached) {
+    const now = Date.now();
+    if (now - cached.timestamp < CACHE_TTL) {
       return cached.data as T;
     }
   }
@@ -62,6 +62,12 @@ export const customFetch = async <T>({
     return parsedData;
   } catch (error) {
     console.error(`Fetch error for ${url}:`, error);
+
+    if (cached) {
+      console.warn(`Returning stale cache for ${url} due to fetch failure.`);
+      return cached.data as T;
+    }
+
     throw error;
   }
 };

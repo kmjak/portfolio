@@ -1,17 +1,16 @@
 ---
 import AboutBackgroundSection from "@/features/background/components/AboutBackgroundSection.astro";
-import LatestProjectSection from "@/features/project/components/LatestProjectSection.astro";
 import DefaultLayout from "src/layouts/DefaultLayout.astro";
 
-const title = "Aboutページ";
-const heading = "Aboutページ";
+const title = "About Me";
+const heading = "経歴";
 ---
 
 <DefaultLayout
   title={title}
   heading={heading}
-  className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-4"
 >
-  <AboutBackgroundSection />
-  <LatestProjectSection />
+  <div class="py-12 px-4">
+    <AboutBackgroundSection />
+  </div>
 </DefaultLayout>

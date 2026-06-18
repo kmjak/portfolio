@@ -15,7 +15,7 @@ const latestThreeBlogs = allBlogs
   ) : (
     <ul class="space-y-4">
       {latestThreeBlogs.map((blog) => (
-        <LatestBlogItem frontmatter={blog.data} url={`/blog/${blog.id}`} />
+        <LatestBlogItem frontmatter={blog.data} url={`/blog/${blog.slug}`} />
       ))}
     </ul>
   )

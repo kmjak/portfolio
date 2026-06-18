@@ -23,9 +23,9 @@ const projects = await fetchProjects();
             <article class="flex flex-col h-full bg-white/70 backdrop-blur-sm border border-neutral-200/60 rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-primary-500/10 hover:border-primary-200 transition-all duration-500">
               <div class="aspect-video w-full bg-neutral-100 relative overflow-hidden">
                 {project.thumbnailUrl ? (
-                  <img 
-                    src={project.thumbnailUrl} 
-                    alt={project.title} 
+                  <img
+                    src={project.thumbnailUrl}
+                    alt={project.title}
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 ) : (
@@ -41,7 +41,7 @@ const projects = await fetchProjects();
                   )}
                 </div>
               </div>
-              
+
               <div class="flex flex-col flex-grow p-6">
                 <h3 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-primary-600 transition-colors line-clamp-1">
                   {project.title}
@@ -49,12 +49,15 @@ const projects = await fetchProjects();
                 <p class="text-neutral-500 text-sm line-clamp-3 mb-6 leading-relaxed flex-grow">
                   {project.description}
                 </p>
-                
+
                 <div class="flex items-center justify-between pt-4 border-t border-neutral-100 mt-auto">
                   <span class="text-xs font-bold text-neutral-400 uppercase tracking-widest group-hover:text-primary-600 transition-colors">
                     View Project
                   </span>
-                  <Icon name="mdi:arrow-right" class="w-5 h-5 text-neutral-300 group-hover:text-primary-600 group-hover:translate-x-1 transition-all" />
+                  <Icon
+                    name="mdi:arrow-right"
+                    class="w-5 h-5 text-neutral-300 group-hover:text-primary-600 group-hover:translate-x-1 transition-all"
+                  />
                 </div>
               </div>
             </article>

@@ -23,7 +23,9 @@ const { iconName, cardTitle, hasHeader = true, sectionClassName = "" } = Astro.p
               <Icon name={iconName} class="w-6 h-6" />
             </div>
           )}
-          {cardTitle && <h2 class="text-xl font-bold text-neutral-900 tracking-tight">{cardTitle}</h2>}
+          {cardTitle && (
+            <h2 class="text-xl font-bold text-neutral-900 tracking-tight">{cardTitle}</h2>
+          )}
         </div>
       </div>
     )

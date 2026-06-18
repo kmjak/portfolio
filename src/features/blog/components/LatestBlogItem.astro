@@ -1,9 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
-import type { BlogPost } from "../types";
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  frontmatter: Omit<BlogPost["frontmatter"], "description">;
+  frontmatter: CollectionEntry<"blog">["data"];
   url: string;
 }
 

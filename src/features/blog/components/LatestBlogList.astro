@@ -1,13 +1,11 @@
 ---
-import type { BlogPost } from "../types";
+import { getCollection } from "astro:content";
 import LatestBlogItem from "./LatestBlogItem.astro";
 
-const allBlogs = Object.values(import.meta.glob<BlogPost>("src/pages/blog/*.md", { eager: true }));
+const allBlogs = await getCollection("blog");
 
 const latestThreeBlogs = allBlogs
-  .sort(
-    (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
-  )
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
   .slice(0, 3);
 ---
 
@@ -16,8 +14,8 @@ const latestThreeBlogs = allBlogs
     <p class="text-sm text-neutral-500 text-center">表示するブログがありません。</p>
   ) : (
     <ul class="space-y-4">
-      {latestThreeBlogs.map(blog => (
-        <LatestBlogItem frontmatter={blog.frontmatter} url={blog.url} />
+      {latestThreeBlogs.map((blog) => (
+        <LatestBlogItem frontmatter={blog.data} url={`/blog/${blog.id}`} />
       ))}
     </ul>
   )

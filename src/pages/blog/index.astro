@@ -8,17 +8,18 @@ const title = "ブログ一覧";
 const heading = "ブログ";
 
 const posts = await getCollection("blog");
-const sortedPosts = posts.sort(
-  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
-);
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
 
 <DefaultLayout title={title} heading={heading}>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {
-      sortedPosts.map((post) => (
+      sortedPosts.map(post => (
         <a href={`/blog/${post.slug}`} class="block group">
-          <Card hasHeader={false} sectionClassName="h-full group-hover:border-primary-500 transition-colors">
+          <Card
+            hasHeader={false}
+            sectionClassName="h-full group-hover:border-primary-500 transition-colors"
+          >
             <div class="flex flex-col h-full">
               <div class="flex items-center gap-3 mb-4">
                 <div class="p-2 border border-neutral-300 rounded-lg group-hover:bg-neutral-50 transition-colors">

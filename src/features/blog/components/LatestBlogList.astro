@@ -14,7 +14,7 @@ const latestThreeBlogs = allBlogs
     <p class="text-sm text-neutral-500 text-center">表示するブログがありません。</p>
   ) : (
     <ul class="space-y-4">
-      {latestThreeBlogs.map((blog) => (
+      {latestThreeBlogs.map(blog => (
         <LatestBlogItem frontmatter={blog.data} url={`/blog/${blog.slug}`} />
       ))}
     </ul>

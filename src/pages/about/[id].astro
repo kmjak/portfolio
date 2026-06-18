@@ -29,17 +29,29 @@ const heading = "経歴詳細";
         href="/about"
         class="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-neutral-200 text-neutral-600 hover:text-blue-600 hover:border-blue-200 hover:shadow-sm transition-all duration-300 font-medium text-sm"
       >
-        <Icon name="heroicons:arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+        <Icon
+          name="heroicons:arrow-left"
+          class="w-4 h-4 group-hover:-translate-x-1 transition-transform"
+        />
         Aboutへ戻る
       </a>
     </nav>
 
     <!-- メインコンテンツ -->
-    <div class="bg-white border border-neutral-100 shadow-xl shadow-neutral-200/50 rounded-[2.5rem] overflow-hidden">
+    <div
+      class="bg-white border border-neutral-100 shadow-xl shadow-neutral-200/50 rounded-[2.5rem] overflow-hidden"
+    >
       <div class="p-8 md:p-12 space-y-8">
         <header class="space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold tracking-widest uppercase">
-            {new Date(background.eventDate).toLocaleDateString("ja-JP", { year: 'numeric', month: 'long' })}
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold tracking-widest uppercase"
+          >
+            {
+              new Date(background.eventDate).toLocaleDateString("ja-JP", {
+                year: "numeric",
+                month: "long",
+              })
+            }
           </div>
           <h1 class="text-4xl md:text-5xl font-black text-neutral-900 tracking-tight leading-tight">
             {background.title}
@@ -49,13 +61,15 @@ const heading = "経歴詳細";
         <div class="h-px bg-neutral-100"></div>
 
         <section class="prose prose-neutral max-w-none">
-          {background.description ? (
-            <p class="text-xl text-neutral-600 leading-relaxed whitespace-pre-wrap font-medium">
-              {background.description}
-            </p>
-          ) : (
-            <p class="text-neutral-400 italic">詳細な説明はありません。</p>
-          )}
+          {
+            background.description ? (
+              <p class="text-xl text-neutral-600 leading-relaxed whitespace-pre-wrap font-medium">
+                {background.description}
+              </p>
+            ) : (
+              <p class="text-neutral-400 italic">詳細な説明はありません。</p>
+            )
+          }
         </section>
       </div>
     </div>

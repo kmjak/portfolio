@@ -10,8 +10,7 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "format": "prettier --write ./src",
-    "format:check": "prettier --check ./src",
-    "prepare": "husky"
+    "format:check": "prettier --check ./src"
   },
   "dependencies": {
     "@astrojs/netlify": "^6.6.5",
@@ -52,6 +51,6 @@
     "husky": "^9.1.7",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript": "^6.0.3"
+    "typescript": "^5.9.3"
   }
 }

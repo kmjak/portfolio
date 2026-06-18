@@ -8,8 +8,8 @@ type FetchProps<T> = {
 };
 
 const cache = new Map<string, { data: any; timestamp: number }>();
-// キャッシュの有効期限 (5分)
-const CACHE_TTL = 1000 * 60 * 5;
+// キャッシュの有効期限 (1日)
+const CACHE_TTL = 1000 * 60 * 60 * 24;
 
 /**
  * 共通のフェッチ関数 (キャッシュ機能付き)

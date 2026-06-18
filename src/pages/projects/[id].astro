@@ -7,8 +7,6 @@ export const prerender = false;
 
 const { id } = Astro.params;
 
-console.log("Project ID:", id);
-
 if (!id) {
   return Astro.redirect("/projects");
 }

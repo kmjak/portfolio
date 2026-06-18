@@ -61,10 +61,7 @@ export const customFetch = async <T>({
 
     return parsedData;
   } catch (error) {
-    console.error(`Fetch error for ${url}:`, error);
-
     if (cached) {
-      console.warn(`Returning stale cache for ${url} due to fetch failure.`);
       return cached.data as T;
     }
 
